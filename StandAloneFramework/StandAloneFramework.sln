@@ -1,18 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandAloneFramework", "StandAloneFramework\StandAloneFramework.csproj", "{CDE26C6E-597A-4591-9258-3F49B302323D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandAloneFramework", "StandAloneFramework\StandAloneFramework\StandAloneFramework.csproj", "{E5DAFDEB-52C4-4284-94F7-681A68CA35CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandAloneFrameworkTest", "StandAloneFramework\StandAloneFrameworkTest\StandAloneFrameworkTest.csproj", "{295BDD5F-9573-4AC4-A238-29D50C2C143F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CDE26C6E-597A-4591-9258-3F49B302323D}.Debug|x86.ActiveCfg = Debug|x86
-		{CDE26C6E-597A-4591-9258-3F49B302323D}.Debug|x86.Build.0 = Debug|x86
-		{CDE26C6E-597A-4591-9258-3F49B302323D}.Release|x86.ActiveCfg = Release|x86
-		{CDE26C6E-597A-4591-9258-3F49B302323D}.Release|x86.Build.0 = Release|x86
+		{E5DAFDEB-52C4-4284-94F7-681A68CA35CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DAFDEB-52C4-4284-94F7-681A68CA35CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DAFDEB-52C4-4284-94F7-681A68CA35CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DAFDEB-52C4-4284-94F7-681A68CA35CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295BDD5F-9573-4AC4-A238-29D50C2C143F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295BDD5F-9573-4AC4-A238-29D50C2C143F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295BDD5F-9573-4AC4-A238-29D50C2C143F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295BDD5F-9573-4AC4-A238-29D50C2C143F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

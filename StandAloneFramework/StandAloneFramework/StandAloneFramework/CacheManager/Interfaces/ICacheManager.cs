@@ -2,7 +2,7 @@
 {
     public interface ICacheManager<T>
     {
-        T AddObjectToCache(T instance);
+        void AddObjectToCache(T instance);
 
         T GetObjectFromCache(int hashCode);
 

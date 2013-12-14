@@ -10,15 +10,27 @@ namespace StandAloneFrameworkTest.StatefulTests.CacheManager
         [TestMethod]
         public void CanGetObjectFromCache()
         {
-            var expectedObject = new Object();
+            var expectedObject = new Person();
 
-            var cacheManager = new CacheManager<Object>();
-            cacheManager.AddObjectToCache(expectedObject);
+            var cacheManager = new CacheManager<Person>();
 
             var cachedObject = cacheManager.GetObjectFromCache(expectedObject.GetHashCode());
 
-            Assert.AreEqual(expectedObject, cachedObject);
+            Assert.AreNotEqual(expectedObject, cachedObject);
 
+            cacheManager.AddObjectToCache(expectedObject);
+
+            cachedObject = cacheManager.GetObjectFromCache(expectedObject.GetHashCode());
+
+            Assert.AreEqual(expectedObject,cachedObject);
         }
     }
+
+    class Person
+    {
+        internal string FirstName { get; set; }
+
+        internal int Age { get; set; }
+    }
 }
+

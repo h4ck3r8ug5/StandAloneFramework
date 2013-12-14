@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 using StandAloneFramework.Extensions;
 
 namespace StandAloneFramework
 {
-    public class CacheManager<T> : ICacheManager<T>    {
+    public class CacheManager<T> : ICacheManager<T>
+    {
         [Obsolete("This will be implemented later on. Do not use.")]
         protected enum CacheFlushReason
         {
@@ -19,21 +22,15 @@ namespace StandAloneFramework
         {
             Cache = new Hashtable();
             Instance = Activator.CreateInstance<T>();
-        } 
+        }
 
         protected T Instance { get; set; }
 
         private Hashtable Cache { get; set; }
 
-        public T AddObjectToCache(T instance)
+        public void AddObjectToCache(T instance)
         {
-            var cachedObject = GetObjectFromCache(instance.GetHashCode());
-            if (cachedObject.IsObjectNull())
-            {
-                Cache.Add(instance.GetHashCode(), instance);
-                return default(T);
-            }
-            return cachedObject;
+            Cache.Add(instance.GetHashCode(), instance);
         }
 
         public T GetObjectFromCache(int hashCode)
@@ -43,16 +40,25 @@ namespace StandAloneFramework
                 return (T)Cache[hashCode];
             }
 
-            var instance = Activator.CreateInstance<T>();
+            AddObjectToCache(Instance);
 
-            AddObjectToCache(instance);
-
-            return GetObjectFromCache(instance.GetHashCode());
+            return GetObjectFromCache(Instance.GetHashCode());
         }
 
         public void FlushCache()
         {
-            throw new System.NotImplementedException();
-        }       
+            foreach (var cacheItem in Cache)
+            {
+                object boxedItem;
+                if (cacheItem is Thread)
+                {
+                    boxedItem = (Thread)cacheItem;
+                    if (boxedItem.ThreadState == ThreadState.Aborted || cacheItem.ThreadState == ThreadState.Stopped)
+                    {
+                        Cache.Remove(cacheItem);
+                    }
+                }
+            }
+        }
     }
 }
