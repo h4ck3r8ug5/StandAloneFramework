@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using StandAloneFramework.Extensions;
+using StandAloneFramework.Interfaces;
 
 namespace StandAloneFramework
 {
@@ -50,9 +50,9 @@ namespace StandAloneFramework
             return GetObjectFromCache(instance.GetHashCode());
         }
 
-        public void FlushCache()
+        public bool FlushCache()
         {
-            throw new System.NotImplementedException();
+            return true;
         }       
     }
 }

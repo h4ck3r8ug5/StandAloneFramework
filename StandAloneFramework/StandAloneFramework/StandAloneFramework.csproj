@@ -41,10 +41,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheManager\Interfaces\ICacheManager.cs" />
-    <Compile Include="CacheManager.cs" />
+    <Compile Include="CacheManager\CacheManager.cs" />
+    <Compile Include="DynamicInvoker\DyamicInvoker.cs" />
+    <Compile Include="ErrorManager\ErrorManager.cs" />
+    <Compile Include="ErrorManager\Interfaces\IErrorManager.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\FauxExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="DynamicInvoker\Intefaces\IDynamicInvoker.cs" />
+    <Compile Include="FrameworkClasses\InvocationResult.cs" />
+    <Compile Include="MessageHandler\Interfaces\IMessageHandler.cs" />
+    <Compile Include="MessageHandler\MessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

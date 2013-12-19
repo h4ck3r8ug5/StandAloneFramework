@@ -1,24 +1,34 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StandAloneFramework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StandAloneFramework.Extensions;
+using StandAloneFrameworkTest.StatefulTests.FauxClasses;
 
 namespace StandAloneFrameworkTest.StatefulTests.CacheManager
 {
     [TestClass]
-    public class CacheMangerTestFixture
+    public class CacheMangerTestFixture : FauxCacheManager
     {
         [TestMethod]
-        public void CanGetObjectFromCache()
+        public void CanCallGetObjectFromCache()
         {
-            var expectedObject = new Object();
+            ActualFauxCallResult = GetObjectFromCache(0).CallResult();
 
-            var cacheManager = new CacheManager<Object>();
-            cacheManager.AddObjectToCache(expectedObject);
+            Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
+        }
 
-            var cachedObject = cacheManager.GetObjectFromCache(expectedObject.GetHashCode());
+        [TestMethod]
+        public void CanCallAddObjectToCache()
+        {
+            ActualFauxCallResult = AddObjectToCache(null).CallResult();
 
-            Assert.AreEqual(expectedObject, cachedObject);
+            Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
+        }
 
+        [TestMethod]
+        public void CanCallFlushCache()
+        {
+            ActualFauxCallResult = FlushCache().CallResult();
+
+            Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
         }
     }
 }

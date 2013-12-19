@@ -1,0 +1,32 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/StandAloneFramework/TestResults/Charles_FAMILY-PC 2013-12-18 20_58_32/Out/AgentRestart.dat
+/StandAloneFramework/StandAloneFramework/bin/Debug/StandAloneFramework.dll
+/StandAloneFramework/StandAloneFramework/bin/Debug/StandAloneFramework.pdb
+/StandAloneFramework/StandAloneFramework/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/StandAloneFramework/StandAloneFramework/obj/Debug/StandAloneFramework.csproj.FileListAbsolute.txt
+/StandAloneFramework/StandAloneFramework/obj/Debug/StandAloneFramework.dll
+/StandAloneFramework/StandAloneFramework/obj/Debug/StandAloneFramework.pdb
+/StandAloneFramework/StandAloneFramework/StandAloneFramework.csproj.user
+/StandAloneFramework/StandAloneFrameworkTest/bin/Debug/StandAloneFramework.dll
+/StandAloneFramework/StandAloneFrameworkTest/bin/Debug/StandAloneFramework.pdb
+/StandAloneFramework/StandAloneFrameworkTest/bin/Debug/StandAloneFrameworkTest.dll
+/StandAloneFramework/StandAloneFrameworkTest/bin/Debug/StandAloneFrameworkTest.pdb
+/StandAloneFramework/StandAloneFrameworkTest/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.csproj.FileListAbsolute.txt
+/StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.csprojResolveAssemblyReference.cache
+/StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.pdb
+/StandAloneFramework/StandAloneFrameworkTest/StandAloneFrameworkTest.csproj.user
+/StandAloneFramework/TestResults/Charles_FAMILY-PC 2013-12-18 19_58_44/Out/AgentRestart.dat
+/StandAloneFramework/TestResults/Charles_FAMILY-PC 2013-12-18 20_07_45/Out/AgentRestart.dat
+/InterviewQuestionGenerator/InterviewGeneratorFramework/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/InterviewQuestionGenerator/InterviewGeneratorTest/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/InterviewQuestionGenerator/InterviewQuestionGenerator.sln.GhostDoc.xml
+/InterviewQuestionGenerator/InterviewQuestionGenerator/bin/Debug/InterviewQuestionGenerator.exe.config
+/InterviewQuestionGenerator/InterviewQuestionGenerator/bin/Debug/InterviewQuestionGenerator.vshost.exe
+/InterviewQuestionGenerator/InterviewQuestionGenerator/bin/Debug/InterviewQuestionGenerator.vshost.exe.config
+/InterviewQuestionGenerator/InterviewQuestionGenerator/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/InterviewQuestionGenerator/InterviewQuestionGenerator/obj/x86/Debug/InterviewQuestionGenerator.csproj.FileListAbsolute.txt
+/StandAloneFramework/StandAloneFramework.sln.GhostDoc.xml

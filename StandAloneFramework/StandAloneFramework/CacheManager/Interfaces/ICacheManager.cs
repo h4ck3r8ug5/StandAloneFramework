@@ -1,4 +1,4 @@
-﻿namespace StandAloneFramework
+﻿namespace StandAloneFramework.Interfaces
 {
     public interface ICacheManager<T>
     {
@@ -6,6 +6,6 @@
 
         T GetObjectFromCache(int hashCode);
 
-        void FlushCache();
+        bool FlushCache();
     }
 }
