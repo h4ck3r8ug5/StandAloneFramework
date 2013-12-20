@@ -25,11 +25,9 @@ namespace StandAloneFramework
 
         private Hashtable Cache { get; set; }
 
-        public T AddObjectToCache(T instance)
+        public void AddObjectToCache(T instance)
         {
             Cache.Add(instance.GetHashCode(), instance);
-
-            return GetObjectFromCache(instance.GetHashCode());
         }
 
         public T GetObjectFromCache(int hashCode)
@@ -48,6 +46,6 @@ namespace StandAloneFramework
 
         public void FlushCache()
         {
-        }       
+        }        
     }
 }

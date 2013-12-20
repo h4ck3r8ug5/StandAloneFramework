@@ -18,7 +18,8 @@ namespace StandAloneFrameworkTest.StatefulTests.CacheManager
         [TestMethod]
         public void CanCallAddObjectToCache()
         {
-            ActualFauxCallResult = AddObjectToCache(null).CallResult();
+            AddObjectToCache(null);
+            ActualFauxCallResult = IsMethodIvoked;
 
             Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
         }

@@ -6,10 +6,9 @@ namespace StandAloneFrameworkTest.StatefulTests.FauxClasses
 {
     public class FauxCacheManager : FauxManager, ICacheManager<Object>
     {
-        public object AddObjectToCache(object instance)
+        public void AddObjectToCache(object instance)
         {
             IsMethodIvoked = true;
-            return IsMethodIvoked;
         }
 
         public object GetObjectFromCache(int hashCode)
@@ -21,6 +20,6 @@ namespace StandAloneFrameworkTest.StatefulTests.FauxClasses
         public void FlushCache()
         {
             IsMethodIvoked = true;
-        }
+        }       
     }
 }
