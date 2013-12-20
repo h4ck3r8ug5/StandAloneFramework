@@ -1,6 +1,6 @@
 ﻿namespace StandAloneFramework.FrameworkClasses
 {
-    public class InvocationResult
+    public class InvocationResult : MemoryManager<InvocationResult>
     {
         public enum InvocationResultType
         {

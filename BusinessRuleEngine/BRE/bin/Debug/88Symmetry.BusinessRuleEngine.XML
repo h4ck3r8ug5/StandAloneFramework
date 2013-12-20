@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>88Symmetry.BusinessRuleEngine</name>
+    </assembly>
+    <members>
+        <member name="T:_88Symmetry.BusinessRuleEngine.Base.BaseValidationContext">
+            <summary>
+            Acts as the Base that the validation engine inherits from
+            </summary>
+        </member>
+        <member name="M:_88Symmetry.BusinessRuleEngine.Base.BaseValidationContext.ExecuteRule(System.Object)">
+            <summary>
+            Executes the rule
+            </summary>
+            <param name="rule">The business rule to execute</param>        
+        </member>
+        <member name="M:_88Symmetry.BusinessRuleEngine.Base.BaseValidationContext.CreateRuleBag(System.Object,Cross.Cutting.Concerns.Common.CommonTypes.Enums.BusinessRuleContextArea)">
+            <summary>
+            Creates the rule bag containing all the rules
+            </summary>
+            <param name="instance">The instance that will be tested against the rules</param>
+            <param name="businessRuleContextArea">The content area in which the rules belong to</param>
+        </member>
+        <member name="P:_88Symmetry.BusinessRuleEngine.Base.BaseValidationContext.Rules">
+            <summary>
+            Gets or Sets the collection of valid rules and non valid rules
+            </summary>
+            <value>The rules.</value>
+        </member>
+        <member name="P:_88Symmetry.BusinessRuleEngine.Base.BaseValidationContext.Cache">
+            <summary>
+            Gets or sets the business rule cache.
+            </summary>
+            <value>The business rule cache.</value>
+        </member>
+        <member name="T:_88Symmetry.BusinessRuleEngine.RuleCollection">
+            <summary>
+            Manages the creation of the business rules
+            </summary>
+        </member>
+        <member name="M:_88Symmetry.BusinessRuleEngine.RuleCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:_88Symmetry.BusinessRuleEngine.RuleCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:_88Symmetry.BusinessRuleEngine.RuleCollection.ResolveRules(System.Object,Cross.Cutting.Concerns.Common.CommonTypes.Enums.BusinessRuleContextArea)">
+            <summary>
+            Resolves the rules.
+            </summary>
+            <param name="instance">The instance.</param>
+            <param name="businessRuleContextArea">The context area.</param>       
+        </member>
+        <member name="P:_88Symmetry.BusinessRuleEngine.RuleCollection.BusinessRuleCache">
+            <summary>
+            Gets or sets the business rule cache.
+            </summary>
+            <value>
+            The business rule cache.
+            </value>
+        </member>
+        <member name="T:_88Symmetry.BusinessRuleEngine.ValidateRules">
+            <summary>
+            Manages the methods that Execute the rules against the given instance per context area
+            </summary>
+        </member>
+        <member name="M:_88Symmetry.BusinessRuleEngine.ValidateRules.ExecuteRules(System.Object,Cross.Cutting.Concerns.Common.CommonTypes.Enums.BusinessRuleContextArea)">
+            <summary>
+            Executes the rules against the given instance per context area and returns a collection of Messages based on the execution result of the rules
+            </summary>
+            <param name="instance">The target object that the rules will run against</param>
+            <param name="businessRuleContextArea">The context area that the target belongs to</param>
+            <returns>IList{CommonTypes.Message}.</returns>
+        </member>
+    </members>
+</doc>

@@ -18,9 +18,9 @@ namespace StandAloneFrameworkTest.StatefulTests.FauxClasses
             return IsMethodIvoked;
         }
 
-        public bool FlushCache()
+        public void FlushCache()
         {
-            return IsMethodIvoked = true;
+            IsMethodIvoked = true;
         }
     }
 }

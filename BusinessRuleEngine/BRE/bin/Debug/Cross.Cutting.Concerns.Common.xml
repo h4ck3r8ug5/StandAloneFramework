@@ -1,0 +1,1389 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cross.Cutting.Concerns.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Cross.Cutting.Concerns.Common.Cache.Cache">
+            <summary>
+            Represents the cache 
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Interfaces.ICache.AddToCache``1(``0)">
+            <summary>
+            Adds the business rule to the cache.
+            </summary>
+            <typeparam name="T">The business rule to add</typeparam>
+            <param name="businessRule">The business rule.</param>
+            <returns>Reserved for future use</returns>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Interfaces.ICache.FlushCache">
+            <summary>
+            Flushes the cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>Returns 0 items if the cache has been successfully flushed</returns>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Interfaces.ICache.GetFromCache``1(``0)">
+            <summary>
+            Gets the business rule from the cache.
+            </summary>
+            <typeparam name="T">The business rule instance</typeparam>
+            <param name="businessRule">The business rule.</param>
+            <returns>``0.</returns>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.Cache.Cache.IsFirstRun">
+            <summary>
+            Indicates if the cache has been populated already
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Cache.Cache.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cross.Cutting.Concerns.Common.Cache.Cache"/> class.
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Cache.Cache.AddToCache``1(``0)">
+            <summary>
+            Adds an object to the cache.
+            </summary>
+            <typeparam name="T">The base type of the object to add</typeparam>
+            <param name="targetObject">The object.</param>
+            <returns>Reserved for future use</returns>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Cache.Cache.FlushCache">
+            <summary>
+            Flushes the cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>Returns 0 items if the cache has been successfully flushed</returns>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Cache.Cache.GetFromCache``1(``0)">
+            <summary>
+            Gets the object from the cache.
+            </summary>
+            <typeparam name="T">The object instance</typeparam>
+            <param name="targetObject">The object.</param>
+            <returns>0.</returns>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Cache.Cache.CachedObjects">
+            <summary>
+            Gets or sets the cached objects collection
+            </summary>
+            <value>The cached objects.</value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.Calculators.OrderManagerCalculator">
+            <summary>
+            Encapsulates all the methods that manage the calcualtions in the order
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.Interfaces.IOrderManagerCalculator">
+            <summary>
+            Acts as a contract between the IOrderManagerCalculator interface and the class
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Interfaces.IOrderManagerCalculator.CalculateCurrentItemTotal(Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO,System.Int32)">
+            <summary>
+            Calculates the current item total.
+            </summary>
+            <param name="itemDTO">The item DTO.</param>
+            <param name="quantity">The amount of items</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.Calculators.OrderManagerCalculator.CalculateCurrentItemTotal(Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO,System.Int32)">
+            <summary>
+            Calculates the current item total.
+            </summary>
+            <param name="itemDTO">The item in the current order</param>
+            <param name="quantity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.PersistedTypes">
+            <summary>
+            Contains all the types and methods which are persisted throughout the application
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.CommonTypes.PersistedTypes.ShowNotifications(System.Collections.Generic.ICollection{Cross.Cutting.Concerns.Common.CommonTypes.Notification})">
+            <summary>
+            Shows the notifications.
+            </summary>
+            <param name="notifications">The notifications.</param>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.CommonTypes.PersistedTypes.ApplicationUser">
+            <summary>
+            Gets or sets the application user.
+            </summary>
+            <value>
+            The application user.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.CommonTypes.PersistedTypes.SystemOptions">
+            <summary>
+            Gets or sets the system options.
+            </summary>
+            <value>
+            The system options.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.BusinessRuleContextArea">
+            <summary>
+            Represents the context area to which the business rules are bound
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.NotificationTypes">
+            <summary>
+            Represents the types of notifications that the system returns
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.NotificationTypes.Information">
+            <summary>
+            No Errors occured. Normal operation is possible 
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.NotificationTypes.Warning">
+            <summary>
+            A non-fatal exception occured. Normal operation might be possible
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.NotificationTypes.Error">
+            <summary>
+            A fatal exception has occured. Normal operation is not possible
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.Status">
+            <summary>
+            Represents the statuses that exists in the system
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.Title">
+            <summary>
+            Represents the titles of the user
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.UserRoles">
+            <summary>
+             Represents the roles of the user
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.UserRoles.Principal">
+            <summary>
+            The principal has full, system-wide access
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.UserRoles.Dean">
+            <summary>
+            The dean has access majority of the system
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.UserRoles.Secretary">
+            <summary>
+            The secretary is only allowed in the financial aspect domain
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.UserRoles.Lecturer">
+            <summary>
+            The lecturer is only allowed with the domain relating to the students.
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.MaritialStatus">
+            <summary>
+            Represents the maritial status of the user
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.MaritialStatus.Single">
+            <summary>
+            Person has never married
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.MaritialStatus.Married">
+            <summary>
+            Person is married
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.MaritialStatus.Divorced">
+            <summary>
+            Person has been divorced
+            </summary>
+        </member>
+        <member name="F:Cross.Cutting.Concerns.Common.CommonTypes.Enums.MaritialStatus.Widow">
+            <summary>
+            Person is a widow
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.CommonTypes.Enums.CommunicationTypes">
+            <summary>
+            Represents the communication types
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ApplicationUser">
+            <summary>
+            Represents an application user
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.Interfaces.IApplicationUser">
+            <summary>
+            Acts as a code contract for the ApplicationUser object
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.DataTransferObjects.ApplicationUser.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ApplicationUser"/> class.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ApplicationUser.Login">
+            <summary>
+            Gets or sets the login user.
+            </summary>
+            <value>
+            The login user.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ApplicationUser.UserAccountDTO">
+            <summary>
+            Gets or sets the user details.
+            </summary>
+            <value>
+            The user details.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamEntrantDTO">
+            <summary>
+            Represents the entrant who can write an exam
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamEntrantDTO.ExamModule">
+            <summary>
+            Gets or sets the modules that make up the exam.
+            </summary>
+            <value>
+            The modules.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ModuleDTO">
+            <summary>
+            Represents an exam module
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ModuleDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ModuleDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ModuleDTO.AllowableMarks">
+            <summary>
+            Gets or sets the allowable marks for the module.
+            </summary>
+            <value>
+            The allowable marks.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.StockInventoryDTO">
+            <summary>
+            Represents the order item
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StockInventoryDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StockInventoryDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StockInventoryDTO.QualificationId">
+            <summary>
+            Gets or sets the qualification id.
+            </summary>
+            <value>
+            The qualification id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StockInventoryDTO.QuantityOnHand">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>
+            The quantity.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO">
+            <summary>
+            Represents an order
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO"/> class.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.OrderNumber">
+            <summary>
+            Gets or sets the order number.
+            </summary>
+            <value>
+            The order number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.UserId">
+            <summary>
+            Gets or sets the id of the user who placed the order.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.Items">
+            <summary>
+            Gets or sets the items in the order.
+            </summary>
+            <value>
+            The items.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.OrderTotal">
+            <summary>
+            Gets or sets the order total.
+            </summary>
+            <value>
+            The order total.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.DeliveryDate">
+            <summary>
+            Gets or sets the delivery date.
+            </summary>
+            <value>
+            The delivery date.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderDTO.SupplierId">
+            <summary>
+            Gets or sets the supplier id.
+            </summary>
+            <value>
+            The supplier id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialInsitutionLookupDTO">
+            <summary>
+            Represents the financial institution lookup object
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialInsitutionLookupDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialInsitutionLookupDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialInsitutionLookupDTO.BranchCode">
+            <summary>
+            Gets or sets the branch code.
+            </summary>
+            <value>
+            The branch code.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialInsitutionLookupDTO.SwiftCode">
+            <summary>
+            Gets or sets the swift code.
+            </summary>
+            <value>
+            The swift code.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO">
+            <summary>
+            Represents the order item
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO.ItemCost">
+            <summary>
+            Gets or sets the item code.
+            </summary>
+            <value>
+            The item code.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO.QualificationId">
+            <summary>
+            Gets or sets the qualification id.
+            </summary>
+            <value>
+            The qualification id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ItemDTO.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>
+            The quantity.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO">
+            <summary>
+            Represents the options DTO
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.AdministratorPassword">
+            <summary>
+            Gets or sets the administrator password.
+            </summary>
+            <value>
+            The administrator password.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.DefaultLoginPassword">
+            <summary>
+            Gets or sets the default login password.
+            </summary>
+            <value>
+            The default login password.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.BackupDate">
+            <summary>
+            Gets or sets the backup date.
+            </summary>
+            <value>
+            The backup date.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.DatabaseBackupDestination">
+            <summary>
+            Gets or sets the database backup destination.
+            </summary>
+            <value>
+            The database backup destination.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.DatabaseRestoreDestination">
+            <summary>
+            Gets or sets the database restore destination.
+            </summary>
+            <value>
+            The database restore destination.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OptionsDTO.BackupTime">
+            <summary>
+            Gets or sets the backup time.
+            </summary>
+            <value>
+            The backup time.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderManagerDTO">
+            <summary>
+            Represents the OrderManager entity
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderManagerDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderManagerDTO.ItemId">
+            <summary>
+            Gets or sets the item id.
+            </summary>
+            <value>
+            The item id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderManagerDTO.OrderId">
+            <summary>
+            Gets or sets the order id.
+            </summary>
+            <value>
+            The order id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.OrderManagerDTO.SupplierId">
+            <summary>
+            Gets or sets the supplier id.
+            </summary>
+            <value>
+            The supplier id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentDetails.Status">
+            <summary>
+            Gets or sets the status of the users account.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.SupplierLookupDTO">
+            <summary>
+            Represents a supplier
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SupplierLookupDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SupplierLookupDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SupplierLookupDTO.ContactNumber">
+            <summary>
+            Gets or sets the contact number.
+            </summary>
+            <value>
+            The contact number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SupplierLookupDTO.VATNumber">
+            <summary>
+            Gets or sets the VAT number.
+            </summary>
+            <value>
+            The VAT number.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.UserGroupDTO">
+            <summary>
+            Represents the user group
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserGroupDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserGroupDTO.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserGroupDTO.GroupId">
+            <summary>
+            Gets or sets the group id.
+            </summary>
+            <value>
+            The group id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserGroupDTO.QualificationId">
+            <summary>
+            Gets or sets the qualification id.
+            </summary>
+            <value>
+            The qualification id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ActivityLogDTO">
+            <summary>
+            Represents the Activity Log
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ActivityLogDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ActivityLogDTO.ExceptionMessage">
+            <summary>
+            Gets or sets the exception message.
+            </summary>
+            <value>
+            The exception message.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ActivityLogDTO.TimeStamp">
+            <summary>
+            Gets or sets the time stamp.
+            </summary>
+            <value>
+            The time stamp.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ActivityLogDTO.MessageType">
+            <summary>
+            Gets or sets the type of the message.
+            </summary>
+            <value>
+            The type of the message.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO">
+            <summary>
+            Represents the User Account. This could either be a member of staff or a student based on the studentId
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.IdNumber">
+            <summary>
+            Gets or sets the id number.
+            </summary>
+            <value>
+            The id number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.TitleId">
+            <summary>
+            Gets or sets the title id.
+            </summary>
+            <value>
+            The title id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.Surname">
+            <summary>
+            Gets or sets the surname.
+            </summary>
+            <value>
+            The surname.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.DateOfBirth">
+            <summary>
+            Gets or sets the date of birth.
+            </summary>
+            <value>
+            The date of birth.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.Gender">
+            <summary>
+            Gets or sets the gender.
+            </summary>
+            <value>
+            The gender.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.EmailAddress">
+            <summary>
+            Gets or sets the email address.
+            </summary>
+            <value>
+            The email address.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.PhysicalAddress">
+            <summary>
+            Gets or sets the physical address.
+            </summary>
+            <value>
+            The physical address.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.PostalAddress">
+            <summary>
+            Gets or sets the home postal.
+            </summary>
+            <value>
+            The home postal.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>
+            The postal code.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.LoginId">
+            <summary>
+            Gets or sets the login id.
+            </summary>
+            <value>
+            The login id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.CountryId">
+            <summary>
+            Gets or sets the country id.
+            </summary>
+            <value>
+            The country id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.MaritialStatus">
+            <summary>
+            Gets or sets the maritial status.
+            </summary>
+            <value>
+            The maritial status.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.UserGroupId">
+            <summary>
+            Gets or sets the user group.
+            </summary>
+            <value>
+            The user group.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.UserRoleId">
+            <summary>
+            Gets or sets the user role id.
+            </summary>
+            <value>
+            The user role id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.CommunicationMediumId">
+            <summary>
+            Gets or sets the communication medium id.
+            </summary>
+            <value>
+            The communication medium id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.UserAccountDTO.StatusId">
+            <summary>
+            Gets or sets the status id.
+            </summary>
+            <value>
+            The status id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentClassDTO">
+            <summary>
+            Represents the Student's class
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentClassDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentClassDTO.StudentId">
+            <summary>
+            Gets or sets the student id.
+            </summary>
+            <value>
+            The student id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentClassDTO.SubjectId">
+            <summary>
+            Gets or sets the subject id.
+            </summary>
+            <value>
+            The subject id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.StudentClassDTO.QualificationId">
+            <summary>
+            Gets or sets the qualification id.
+            </summary>
+            <value>
+            The qualification id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.SecurityMatrixDTO">
+            <summary>
+            Represents the Security Matrix. This is where the staff member's role will be found
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SecurityMatrixDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SecurityMatrixDTO.UserId">
+            <summary>
+            Gets or sets the user id.
+            </summary>
+            <value>
+            The user id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.SecurityMatrixDTO.UserRoleId">
+            <summary>
+            Gets or sets the user role id.
+            </summary>
+            <value>
+            The user role id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO">
+            <summary>
+            Represents the Login Account of the staff member
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>
+            The username.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.PasswordHash">
+            <summary>
+            Gets or sets the password hash.
+            </summary>
+            <value>
+            The password hash.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.PasswordResetQuestion">
+            <summary>
+            Gets or sets the password reset question.
+            </summary>
+            <value>
+            The password reset question.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.PasswordResetAnswer">
+            <summary>
+            Gets or sets the password reset answer.
+            </summary>
+            <value>
+            The password reset answer.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.StatusId">
+            <summary>
+            Gets or sets the status id.
+            </summary>
+            <value>
+            The status id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.LoginAccountDTO.LastLogin">
+            <summary>
+            Gets or sets the last login.
+            </summary>
+            <value>
+            The last login.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO">
+            <summary>
+            Represents the Institution
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.RegistrationNumber">
+            <summary>
+            Gets or sets the registration number.
+            </summary>
+            <value>
+            The registration number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.PhysicalAddress">
+            <summary>
+            Gets or sets the physical address.
+            </summary>
+            <value>
+            The physical address.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>
+            The city.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>
+            The postal code.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.CountryId">
+            <summary>
+            Gets or sets the country id.
+            </summary>
+            <value>
+            The country id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.ContactableReferenceName">
+            <summary>
+            Gets or sets the name of the contactable reference.
+            </summary>
+            <value>
+            The name of the contactable reference.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.ContactableReferenceNumber">
+            <summary>
+            Gets or sets the contactable reference number.
+            </summary>
+            <value>
+            The contactable reference number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.StudentId">
+            <summary>
+            Gets or sets the student id.
+            </summary>
+            <value>
+            The student id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.LastQualificationId">
+            <summary>
+            Gets or sets the last qualification id.
+            </summary>
+            <value>
+            The last qualification id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.InstitutionDTO.QualificationYearId">
+            <summary>
+            Gets or sets the qualification year id.
+            </summary>
+            <value>
+            The qualification year id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO">
+            <summary>
+            Represents the FinancialAccount
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.AccountNumber">
+            <summary>
+            Gets or sets the account number.
+            </summary>
+            <value>
+            The account number.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.BranchCode">
+            <summary>
+            Gets or sets the branch code.
+            </summary>
+            <value>
+            The branch code.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.CurrentBalance">
+            <summary>
+            Gets or sets the current balance.
+            </summary>
+            <value>
+            The current balance.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.OutstandingBalance">
+            <summary>
+            Gets or sets the outstanding balance.
+            </summary>
+            <value>
+            The outstanding balance.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.FeesTotal">
+            <summary>
+            Gets or sets the fees total.
+            </summary>
+            <value>
+            The fees total.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.StudentAccountId">
+            <summary>
+            Gets or sets the student account id.
+            </summary>
+            <value>
+            The student account id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.FinancialInstitutionId">
+            <summary>
+            Gets or sets the financial institution id.
+            </summary>
+            <value>
+            The financial institution id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.FinancialAccountDTO.StatusId">
+            <summary>
+            Gets or sets the status id.
+            </summary>
+            <value>
+            The status id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO">
+            <summary>
+            Represents the Exam Schedule
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO.ApplicableStudents">
+            <summary>
+            Gets or sets the student class id.
+            </summary>
+            <value>
+            The student class id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO.SubjectId">
+            <summary>
+            Gets or sets the subject id.
+            </summary>
+            <value>
+            The subject id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO.ExamDate">
+            <summary>
+            Gets or sets the exam date.
+            </summary>
+            <value>
+            The exam date.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.ExamScheduleDTO.ExaminerId">
+            <summary>
+            Gets or sets the examiner id. This is the staff member who administers the examination
+            </summary>
+            <value>
+            The examiner id.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.Interfaces.ICommonTypes">
+            <summary>
+            Represents the common types that will be used
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Interfaces.ICommonTypes.LastLogin">
+            <summary>
+            The last login date and time of the user
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Interfaces.ICommonTypes.IsActive">
+            <summary>
+            Indicates if the entity is active in the system or not
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Interfaces.ICommonTypes.Id">
+            <summary>
+            The Id of the given entity :=:> User, Account, Report etc
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.LogHelper">
+            <summary>
+            Represents the Log4Net Helper  class
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Cross.Cutting.Concerns.Common.LogHelper"/> class.
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.DebugFormat(log4net.ILog,System.String,System.Object[])">
+            <summary>
+            Logs the exception in Debug format with arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="argumentList">The argument list.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.Debug(log4net.ILog,System.String)">
+            <summary>
+            Logs the exception in Debug format with no arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.ErrorFormat(log4net.ILog,System.String,System.Object[])">
+            <summary>
+            Logs the exception in Error format with arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="argumentList">The argument list.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.Error(log4net.ILog,System.String)">
+            <summary>
+            Logs the exception in Error format with no arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.FatalFormat(log4net.ILog,System.String,System.Object[])">
+            <summary>
+            Logs the exception in Fatal format with arguments.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="argumentList">The argument list.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.Fatal(log4net.ILog,System.String,System.Exception)">
+            <summary>
+            Logs the exception in Fatal format
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.InfoFormat(log4net.ILog,System.String,System.Object[])">
+            <summary>
+            Logs the exception in Info format with arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="argumentList">The argument list.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.Info(log4net.ILog,System.String)">
+            <summary>
+            Logs the exception in Info format with no arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.WarnFormat(log4net.ILog,System.String,System.Object[])">
+            <summary>
+            Logs the exception in warning format with arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+            <param name="argumentList">The argument list.</param>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LogHelper.Warn(log4net.ILog,System.String)">
+            <summary>
+            Logs the exception in warning format with no arguments
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes">
+            <summary>
+            Acts as a local lookup for the type. Pass in the value and return the id or vice versa
+            </summary>
+        </member>
+        <member name="M:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes"/> class.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes.TitleIdLookup">
+            <summary>
+            Gets or sets the title id lookup.
+            </summary>
+            <value>
+            The title id lookup.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes.UserRoleLookup">
+            <summary>
+            Gets or sets the user role lookup.
+            </summary>
+            <value>
+            The user role lookup.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.LookupTypes.LookupTypes.StatusLookup">
+            <summary>
+            Gets or sets the user role lookup.
+            </summary>
+            <value>
+            The user role lookup.
+            </value>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Properties.Resources.ErrorTitleMessageBox">
+            <summary>
+              Looks up a localized string similar to An Error Has Occurred.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Properties.Resources.GenericOperationSuccessMessage">
+            <summary>
+              Looks up a localized string similar to The operation has been completed successfully.
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.Properties.Resources.SuccessTitleMessageBox">
+            <summary>
+              Looks up a localized string similar to Success.
+            </summary>
+        </member>
+        <member name="T:Cross.Cutting.Concerns.Common.DataTransferObjects.QualificationLookupDTO">
+            <summary>
+            Represents a qualification
+            </summary>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.QualificationLookupDTO.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+            <value>
+            The id.
+            </value>
+        </member>
+        <member name="P:Cross.Cutting.Concerns.Common.DataTransferObjects.QualificationLookupDTO.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+    </members>
+</doc>

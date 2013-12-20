@@ -6,6 +6,6 @@
 
         T GetObjectFromCache(int hashCode);
 
-        bool FlushCache();
+        void FlushCache();
     }
 }

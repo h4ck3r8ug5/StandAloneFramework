@@ -51,8 +51,12 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="DynamicInvoker\Intefaces\IDynamicInvoker.cs" />
     <Compile Include="FrameworkClasses\InvocationResult.cs" />
+    <Compile Include="MemoryManager\Interfaces\IMemoryManager.cs" />
+    <Compile Include="MemoryManager\MemoryManager.cs" />
     <Compile Include="MessageHandler\Interfaces\IMessageHandler.cs" />
     <Compile Include="MessageHandler\MessageHandler.cs" />
+    <Compile Include="MethodFacade\Interfaces\IMethodFacade.cs" />
+    <Compile Include="MethodFacade\MethodFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

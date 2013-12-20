@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -60,6 +61,14 @@ namespace StandAloneFramework.Extensions
                 var existingQuestions = (T)xmlSerializer.Deserialize(targetFileStream);
 
                 return existingQuestions;
+            }
+        }
+
+        public static void Dispose<T>(this T instance)
+        {
+            if (instance is IDisposable)
+            {
+                (instance as IDisposable).Dispose();
             }
         }
     }

@@ -39,6 +39,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -48,6 +50,11 @@
   <ItemGroup>
     <Compile Include="ExtensionsTest\ObjectExtensionsTestFixture.cs" />
     <Compile Include="ExtensionsTest\StringExtensionsTestFixture.cs" />
+    <Compile Include="IntegrationTests\CacheManager\CacheManagerTestFixture.cs" />
+    <Compile Include="IntegrationTests\DynamicInvoker\DynamicInvokerTestFixture.cs" />
+    <Compile Include="IntegrationTests\ErrorManager\ErrorManagerTestFixture.cs" />
+    <Compile Include="IntegrationTests\IntegrationTestBase.cs" />
+    <Compile Include="IntegrationTests\MemoryManager\MemoryManagerTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatefulTests\CacheManager\CacheMangerTestFixture.cs" />
     <Compile Include="StatefulTests\DynamicInvoker\DynamicInvokerTestFixture.cs" />
@@ -56,7 +63,7 @@
     <Compile Include="StatefulTests\FauxManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IntegrationTests\" />
+    <Folder Include="StatefulTests\ErrorManager\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StandAloneFramework\StandAloneFramework.csproj">

@@ -26,7 +26,8 @@ namespace StandAloneFrameworkTest.StatefulTests.CacheManager
         [TestMethod]
         public void CanCallFlushCache()
         {
-            ActualFauxCallResult = FlushCache().CallResult();
+            FlushCache();
+            ActualFauxCallResult = IsMethodIvoked;
 
             Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
         }

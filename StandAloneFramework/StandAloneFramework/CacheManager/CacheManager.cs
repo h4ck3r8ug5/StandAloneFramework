@@ -27,13 +27,9 @@ namespace StandAloneFramework
 
         public T AddObjectToCache(T instance)
         {
-            var cachedObject = GetObjectFromCache(instance.GetHashCode());
-            if (cachedObject.IsObjectNull())
-            {
-                Cache.Add(instance.GetHashCode(), instance);
-                return default(T);
-            }
-            return cachedObject;
+            Cache.Add(instance.GetHashCode(), instance);
+
+            return GetObjectFromCache(instance.GetHashCode());
         }
 
         public T GetObjectFromCache(int hashCode)
@@ -50,9 +46,8 @@ namespace StandAloneFramework
             return GetObjectFromCache(instance.GetHashCode());
         }
 
-        public bool FlushCache()
+        public void FlushCache()
         {
-            return true;
         }       
     }
 }

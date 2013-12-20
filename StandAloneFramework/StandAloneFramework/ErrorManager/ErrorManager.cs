@@ -18,7 +18,6 @@ namespace StandAloneFramework
             };
         }
 
-
         Exception FindLastException(Exception exception)
         {
             if (exception.InnerException.IsObjectNotNull())
