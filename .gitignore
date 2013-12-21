@@ -14,3 +14,13 @@
 /StandAloneFramework/StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.pdb
 
 StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.dll
+/StandAloneFramework/StandAloneFramework/bin
+*.exe
+*.pdb
+
+*.manifest
+
+*.dll
+
+/StandAloneFramework/ConsoleApplication1/obj/Debug/ConsoleApplication1.csproj.FileListAbsolute.txt
+Debug
