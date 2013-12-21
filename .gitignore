@@ -30,3 +30,7 @@
 /InterviewQuestionGenerator/InterviewQuestionGenerator/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /InterviewQuestionGenerator/InterviewQuestionGenerator/obj/x86/Debug/InterviewQuestionGenerator.csproj.FileListAbsolute.txt
 /StandAloneFramework/StandAloneFramework.sln.GhostDoc.xml
+
+/BusinessRuleEngine/BRE/bin/Debug/*.pdb
+/Cross.Cutting.Concerns/obj/Debug/Cross.Cutting.Concerns.Common.csproj.FileListAbsolute.txt
+/Cross.Cutting.Concerns/obj/Debug/*.Cache
