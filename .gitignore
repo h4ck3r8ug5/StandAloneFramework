@@ -24,3 +24,5 @@ StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.dl
 
 /StandAloneFramework/ConsoleApplication1/obj/Debug/ConsoleApplication1.csproj.FileListAbsolute.txt
 Debug
+*.nupkg
+bin

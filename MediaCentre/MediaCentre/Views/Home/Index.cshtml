@@ -1,0 +1,23 @@
+﻿
+@model List<MediaCentre.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Desktop View</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+            <td></td>
+                <td>@Html.Partial("ProductPartial",Model)</td>
+            </tr>
+        </table>
+        <div style="border-bottom: solid 1px #000">Desktop view</div>       
+        
+    </body>
+</html>
