@@ -9,5 +9,6 @@
         }
         public string Message { get; set; }
         public InvocationResultType MessageType { get; set; }
+        public object Data { get; set; }
     }
 }

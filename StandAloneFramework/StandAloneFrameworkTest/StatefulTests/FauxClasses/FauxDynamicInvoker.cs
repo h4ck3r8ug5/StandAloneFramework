@@ -1,4 +1,5 @@
 ﻿using System;
+using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.FrameworkClasses;
 using StandAloneFramework.Intefaces;
 
@@ -6,17 +7,11 @@ namespace StandAloneFrameworkTest.StatefulTests.FauxClasses
 {
     public class FauxDynamicInvoker : FauxManager, IDynamicInvoker
     {
-        public void InvokeMethod<T>(Action<T> methodToInvoke, params object[] args)
+        public void InvokeMethod<T>(MethodWrapper methodWrapper)
         {
             IsMethodIvoked = true;            
         }
-
-        public InvocationResult InvokeMethod<T>(Func<T, InvocationResult> methodToInvoke, params object[] args)
-        {
-            IsMethodIvoked = true;
-            return new InvocationResult();
-        }
-
+       
         protected void DummyActionMethod(object args)
         {
             
@@ -24,6 +19,12 @@ namespace StandAloneFrameworkTest.StatefulTests.FauxClasses
         protected InvocationResult DummyFuncMethod(object args)
         {
             return null;
+        }
+
+        public InvocationResult InvokeMethod(MethodWrapper methodWrapper)
+        {
+            IsMethodIvoked = true;
+            return new InvocationResult();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using StandAloneFramework;
 using StandAloneFramework.Interfaces;
 
 namespace StandAloneFrameworkTest.StatefulTests.FauxClasses

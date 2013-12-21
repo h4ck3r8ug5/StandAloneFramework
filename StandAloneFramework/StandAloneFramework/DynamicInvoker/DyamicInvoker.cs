@@ -1,33 +1,36 @@
 ﻿using System;
+using StandAloneFramework.Extensions;
+using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.FrameworkClasses;
 using StandAloneFramework.Intefaces;
 
 namespace StandAloneFramework
 {
     public class DyamicInvoker : ErrorManager, IDynamicInvoker
-    {
-        public void InvokeMethod<T>(Action<T> methodToInvoke, params object[] args)
+    {           
+        public InvocationResult InvokeMethod(MethodWrapper methodWrapper)
         {
             try
             {
-                methodToInvoke.DynamicInvoke(args);
+                if (methodWrapper.ExecutingThread.IsObjectNotNull())
+                {
+                    methodWrapper.ExecutingThread.Start();
+                }
+                else
+                {
+                    if (methodWrapper.ActionMethod.IsObjectNotNull())
+                    {
+                        return (InvocationResult) methodWrapper.ActionMethod.DynamicInvoke(methodWrapper.Arguments);
+                    }
+                    return (InvocationResult) methodWrapper.FuncMethod.DynamicInvoke(methodWrapper.Arguments);
+                }
             }
             catch (Exception ex)
             {
-               HandleErrorMessages(ex);
+                HandleErrorMessages(ex);
+                return null;
             }
-        }
-
-        public InvocationResult InvokeMethod<T>(Func<T, InvocationResult> methodToInvoke, params object[] args)
-        {
-            try
-            {
-                return (InvocationResult) methodToInvoke.DynamicInvoke(args);
-            }
-            catch (Exception ex)
-            {
-                return HandleErrorMessages(ex);
-            }
+            return null;
         }
     }
 }

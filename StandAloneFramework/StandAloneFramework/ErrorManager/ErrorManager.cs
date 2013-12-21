@@ -7,15 +7,17 @@ namespace StandAloneFramework
 {
     public class ErrorManager : MessageHandler, IErrorManager
     {
-        public InvocationResult HandleErrorMessages(Exception exception)
+        public void HandleErrorMessages(Exception exception)
         {
             var finalException = FindLastException(exception);
 
-            return new InvocationResult
+            var message = new  InvocationResult
             {
                 Message = finalException.Message,
                 MessageType = InvocationResult.InvocationResultType.Error
             };
+
+            ShowMessage(message);             
         }
 
         Exception FindLastException(Exception exception)

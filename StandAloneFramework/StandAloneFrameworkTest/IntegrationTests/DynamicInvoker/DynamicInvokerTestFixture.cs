@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StandAloneFramework;
+using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.FrameworkClasses;
 using StandAloneFramework.Extensions;
 
@@ -13,10 +15,13 @@ namespace StandAloneFrameworkTest.IntegrationTests.DynamicInvoker
         [TestMethod]
         public void InvokeActionMethod()
         {
-            var action = new Action<int>(InternalTestActionMethod);
+            var action = new Action<DataWrapper>(InternalTestActionMethod);
 
             var dynamicInvoker = new StandAloneFramework.DyamicInvoker();
-            dynamicInvoker.InvokeMethod(action, 2);
+            dynamicInvoker.InvokeMethod(new MethodWrapper
+            {
+                ActionMethod = action,                
+            });
 
             Assert.IsTrue((int)testResult == 3);
         }
@@ -24,20 +29,23 @@ namespace StandAloneFrameworkTest.IntegrationTests.DynamicInvoker
         [TestMethod]
         public void InvokeFuncMethod()
         {
-            var action = new Func<int,InvocationResult>(InternalTestFuncMethod);
+            var action = new Func<DataWrapper,InvocationResult>(InternalTestFuncMethod);
 
-            var dynamicInvoker = new StandAloneFramework.DyamicInvoker();
-            var invocationResult = dynamicInvoker.InvokeMethod(action, 2);
+            var dynamicInvoker = new DyamicInvoker();
+            var invocationResult = dynamicInvoker.InvokeMethod(new MethodWrapper
+            {
+              FuncMethod  = action
+            });
 
             Assert.IsTrue(invocationResult.IsObjectNotNull());
         }
 
-        private void InternalTestActionMethod(int args)
+        private void InternalTestActionMethod(DataWrapper args)
         {
-            testResult = 1 + args;
+            testResult = 1 + args.xValue;
         }
 
-        private static InvocationResult InternalTestFuncMethod(int args)
+        private static InvocationResult InternalTestFuncMethod(DataWrapper args)
         {
             return new InvocationResult();
         }

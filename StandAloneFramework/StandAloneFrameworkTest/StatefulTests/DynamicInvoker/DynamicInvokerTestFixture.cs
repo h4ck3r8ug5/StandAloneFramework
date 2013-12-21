@@ -12,7 +12,7 @@ namespace StandAloneFrameworkTest.StatefulTests.DynamicInvoker
         [TestMethod]
         public void CanCallInvokeActionMethod()
         {
-            InvokeMethod(new Action<object>(DummyActionMethod));
+            InvokeMethod(null);
 
             ActualFauxCallResult = IsMethodIvoked;
 
@@ -22,7 +22,7 @@ namespace StandAloneFrameworkTest.StatefulTests.DynamicInvoker
         [TestMethod]
         public void CanCallInvokeFuncMethod()
         {
-            ActualFauxCallResult = InvokeMethod(new Func<object, InvocationResult>(DummyFuncMethod)).CallResult();
+            ActualFauxCallResult = InvokeMethod(null).CallResult();
 
             Assert.IsTrue(ExpectedFauxCallResult == ActualFauxCallResult);
         }

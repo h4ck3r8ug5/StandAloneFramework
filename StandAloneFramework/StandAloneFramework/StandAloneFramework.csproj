@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Include="CacheManager\Interfaces\ICacheManager.cs" />
     <Compile Include="CacheManager\CacheManager.cs" />
+    <Compile Include="CodeContractValidator\CodeContractValidator.cs" />
+    <Compile Include="DataWrapper.cs" />
     <Compile Include="DynamicInvoker\DyamicInvoker.cs" />
     <Compile Include="ErrorManager\ErrorManager.cs" />
     <Compile Include="ErrorManager\Interfaces\IErrorManager.cs" />
@@ -47,6 +49,10 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="DynamicInvoker\Intefaces\IDynamicInvoker.cs" />
+    <Compile Include="Factories\MethodFactory\Interfaces\IMethodFactory.cs" />
+    <Compile Include="Factories\MethodFactory\MethodFactory.cs" />
+    <Compile Include="Factories\ThreadFactory\Interfaces\IThreadFactory.cs" />
+    <Compile Include="Factories\ThreadFactory\ThreadFactory.cs" />
     <Compile Include="FrameworkClasses\InvocationResult.cs" />
     <Compile Include="MemoryManager\Interfaces\IMemoryManager.cs" />
     <Compile Include="MemoryManager\MemoryManager.cs" />
@@ -55,6 +61,9 @@
     <Compile Include="MethodFacade\Interfaces\IMethodFacade.cs" />
     <Compile Include="MethodFacade\MethodFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ActionHandler\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
