@@ -1,23 +1,38 @@
-﻿
-@model List<MediaCentre.Models.Product>
+﻿@model MediaCentre.Models.Movie
+
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<link type="text/css" rel="stylesheet" href="../../Content/Css/Site.css" />
 
-<html>
-    <head>
-        <title>Desktop View</title>
-    </head>
-    <body>
-        <table>
-            <tr>
-            <td></td>
-                <td>@Html.Partial("ProductPartial",Model)</td>
-            </tr>
-        </table>
-        <div style="border-bottom: solid 1px #000">Desktop view</div>       
-        
-    </body>
-</html>
+@section scripts
+{
+    <script type="text/javascript" src="../../Content/Scripts/JQuery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../../Content/Scripts/Controller.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#test").bind("click", function () {
+                $("#testTable").fadeToggle("slow");
+            });
+        });
+    </script>
+}
+
+<table>
+    <th><a href="#" id="test">Turbo</a></th>
+    <tr>
+        <td>
+            <figure>
+                <img src="../../Content/Images/turbo.jpg" style="width: 140px; height: 240px;" />
+                <figcaption>Turbo 2013</figcaption>
+            </figure>
+        </td>
+        <td style="vertical-align: top; padding-top: 10px;">
+            @Html.Partial("MovieMetadata",Model)
+        </td>
+    </tr>
+</table>
+
+
+

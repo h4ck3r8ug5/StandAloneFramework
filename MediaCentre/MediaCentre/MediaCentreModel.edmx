@@ -93,14 +93,14 @@
     <edmx:ConceptualModels>
       <Schema Namespace="MediaCentreModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MediaCentreEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Formats" EntityType="MediaCentreModel.Format" />
-          <EntitySet Name="Genres" EntityType="MediaCentreModel.Genre" />
-          <EntitySet Name="Metadatas" EntityType="MediaCentreModel.Metadata" />
-          <EntitySet Name="Movies" EntityType="MediaCentreModel.Movie" />
-          <EntitySet Name="Ratings" EntityType="MediaCentreModel.Rating" />
-          <EntitySet Name="Statistics" EntityType="MediaCentreModel.Statistic" />
-          <EntitySet Name="Traces" EntityType="MediaCentreModel.Trace" />
-          <EntitySet Name="Years" EntityType="MediaCentreModel.Year" />
+          <EntitySet Name="Format" EntityType="MediaCentreModel.Format" />
+          <EntitySet Name="Genre" EntityType="MediaCentreModel.Genre" />
+          <EntitySet Name="Metadata" EntityType="MediaCentreModel.Metadata" />
+          <EntitySet Name="Movie" EntityType="MediaCentreModel.Movie" />
+          <EntitySet Name="Rating" EntityType="MediaCentreModel.Rating" />
+          <EntitySet Name="Statistic" EntityType="MediaCentreModel.Statistic" />
+          <EntitySet Name="Trace" EntityType="MediaCentreModel.Trace" />
+          <EntitySet Name="Year" EntityType="MediaCentreModel.Year" />
         </EntityContainer>
         <EntityType Name="Format">
           <Key>
@@ -180,7 +180,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MediaCentreModelStoreContainer" CdmEntityContainer="MediaCentreEntities">
-          <EntitySetMapping Name="Formats">
+          <EntitySetMapping Name="Format">
             <EntityTypeMapping TypeName="MediaCentreModel.Format">
               <MappingFragment StoreEntitySet="Format">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -188,7 +188,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Genres">
+          <EntitySetMapping Name="Genre">
             <EntityTypeMapping TypeName="MediaCentreModel.Genre">
               <MappingFragment StoreEntitySet="Genre">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -196,7 +196,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Metadatas">
+          <EntitySetMapping Name="Metadata">
             <EntityTypeMapping TypeName="MediaCentreModel.Metadata">
               <MappingFragment StoreEntitySet="Metadata">
                 <ScalarProperty Name="ScreenResolution" ColumnName="ScreenResolution" />
@@ -208,7 +208,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Movies">
+          <EntitySetMapping Name="Movie">
             <EntityTypeMapping TypeName="MediaCentreModel.Movie">
               <MappingFragment StoreEntitySet="Movie">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -223,7 +223,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ratings">
+          <EntitySetMapping Name="Rating">
             <EntityTypeMapping TypeName="MediaCentreModel.Rating">
               <MappingFragment StoreEntitySet="Rating">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -231,7 +231,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Statistics">
+          <EntitySetMapping Name="Statistic">
             <EntityTypeMapping TypeName="MediaCentreModel.Statistic">
               <MappingFragment StoreEntitySet="Statistic">
                 <ScalarProperty Name="MovieId" ColumnName="MovieId" />
@@ -241,7 +241,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Traces">
+          <EntitySetMapping Name="Trace">
             <EntityTypeMapping TypeName="MediaCentreModel.Trace">
               <MappingFragment StoreEntitySet="Trace">
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -252,7 +252,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Years">
+          <EntitySetMapping Name="Year">
             <EntityTypeMapping TypeName="MediaCentreModel.Year">
               <MappingFragment StoreEntitySet="Year">
                 <ScalarProperty Name="Id" ColumnName="Id" />

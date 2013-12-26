@@ -1,32 +1,29 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
-using MediaCentre.Models;
 
 namespace MediaCentre.Controllers
 {
     public class HomeController : Controller
     {
-       [HttpGet]
         public ActionResult Index()
-       {
-           var products = new List<Product>();
+        {
+            var movie = new Models.Movie();
 
-           using (var context = new MediaCentreEntities())
-           {
-               products = (from product in context.Years
-                           select new Product
-                           {
-                               Id = product.Id,
-                               Description = product.Value
-                           }
-                   
-                   ).ToList(); 
-           }
+            using (var context = new MediaCentreEntities())
+            {
+                movie = context.Movie.Select(x => new Models.Movie
+                {
+                    Description = x.Description,
+                    Directors = x.Directors,
+                    Genre = "ANimation",
+                    Year = 2013,
+                    Name = "Turbo",
+                    Rating = 6
 
-           return View("ProductPartial", products);
+                }).First();
+            }
+
+            return View(movie);
         }
-
     }
 }

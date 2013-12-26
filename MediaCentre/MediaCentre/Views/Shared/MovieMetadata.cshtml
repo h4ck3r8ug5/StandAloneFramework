@@ -1,0 +1,42 @@
+﻿@model MediaCentre.Models.Movie
+
+ <div class="flipbox-container">
+                <div class="flipbox">
+                    <table id="testTable" class="Hidden">
+                        <tr>
+                            <td>Genre:</td>
+                            <td>@Model.Genre</td>
+                        </tr>
+                        <tr>
+                            <td>Year:</td>
+                            <td>@Model.Year</td>
+                        </tr>
+                        <tr>
+                            <td>Director:</td>
+                            <td>@Model.Directors</td>
+                        </tr>
+                        <tr>
+                            <td>Overview:</td>
+                            <td>@Model.Description</td>
+                        </tr>
+                        <tr>
+                            <td>Imdb Rating:</td>
+                            <td>
+                                
+                                @for (var i = 0; i < 10; i++)
+                                {                                   
+                                    if (i < Model.Rating)
+                                    {
+                                        <img src="../../Content/Images/star-on.png" alt="star"/>
+                                    }
+                                    else
+                                    {
+                                        <img src="../../Content/Images/star-off.png" alt="no star"/>
+                                    }
+                                }
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>

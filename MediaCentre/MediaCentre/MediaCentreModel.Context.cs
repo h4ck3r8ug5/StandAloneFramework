@@ -25,13 +25,13 @@ namespace MediaCentre
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Format> Formats { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Metadata> Metadatas { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
-        public DbSet<Statistic> Statistics { get; set; }
-        public DbSet<Trace> Traces { get; set; }
-        public DbSet<Year> Years { get; set; }
+        public DbSet<Format> Format { get; set; }
+        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Metadata> Metadata { get; set; }
+        public DbSet<Movie> Movie { get; set; }
+        public DbSet<Rating> Rating { get; set; }
+        public DbSet<Statistic> Statistic { get; set; }
+        public DbSet<Trace> Trace { get; set; }
+        public DbSet<Year> Year { get; set; }
     }
 }
