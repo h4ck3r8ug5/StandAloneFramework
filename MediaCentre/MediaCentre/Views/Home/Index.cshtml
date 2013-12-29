@@ -9,22 +9,22 @@
 @section scripts
 {
     <script type="text/javascript" src="../../Content/Scripts/JQuery/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="../../Content/Scripts/Controller.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#test").bind("click", function () {
                 $("#testTable").fadeToggle("slow");
             });
+            
         });
     </script>
 }
 
 <table>
-    <th><a href="#" id="test">Turbo</a></th>
+    <td colspan="2"></td><a href="#" id="test">@Model.Name</a>
     <tr>
         <td>
             <figure>
-                <img src="../../Content/Images/turbo.jpg" style="width: 140px; height: 240px;" />
+                <img src="@Model.ThumbnailPath" style="width: 140px; height: 240px;" alt=""/>
                 <figcaption>Turbo 2013</figcaption>
             </figure>
         </td>

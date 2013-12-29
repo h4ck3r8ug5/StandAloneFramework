@@ -1,0 +1,85 @@
+﻿@model MvcApplication1.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MetadataId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MetadataId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YearId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YearId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Directors)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Directors)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RatingId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RatingId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GenreId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GenreId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MovieUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MovieUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stars)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stars)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ThumbnailId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThumbnailId)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

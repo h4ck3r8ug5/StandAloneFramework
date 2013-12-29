@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="MediaCentreModel.Statistic" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MediaCentreModel.Trace" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MediaCentreModel.Year" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaCentreModel.MovieThumbnails" Width="1.5" PointX="4.5843570738026678" PointY="9.34112684863672" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,6 +22,8 @@ namespace MediaCentre
         public string Description { get; set; }
         public Nullable<int> RatingId { get; set; }
         public Nullable<int> GenreId { get; set; }
-        public byte[] ThumbnailId { get; set; }
+        public Nullable<int> ThumbnailId { get; set; }
+        public string MovieUrl { get; set; }
+        public string Stars { get; set; }
     }
 }

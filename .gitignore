@@ -26,3 +26,6 @@ StandAloneFramework/StandAloneFrameworkTest/obj/Debug/StandAloneFrameworkTest.dl
 Debug
 *.nupkg
 bin
+/MvcApplication1/packages/Microsoft.Net.Http.2.0.20710.0/lib/net45/_._
+*.cache
+Release

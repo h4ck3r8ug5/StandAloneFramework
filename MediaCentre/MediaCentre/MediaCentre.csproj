@@ -113,6 +113,7 @@
     <Compile Include="App_Start\RouteConfig.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Format.cs">
       <DependentUpon>MediaCentreModel.tt</DependentUpon>
@@ -123,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ImageExtensions.cs" />
     <Compile Include="MediaCentreModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,11 +144,16 @@
       <DependentUpon>MediaCentreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="Models\MovieMetadata.cs" />
+    <Compile Include="Models\MovieMetadata.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Movie.cs">
       <DependentUpon>MediaCentreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MovieContext.cs" />
+    <Compile Include="MovieThumbnails.cs">
+      <DependentUpon>MediaCentreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rating.cs">
       <DependentUpon>MediaCentreModel.tt</DependentUpon>
@@ -224,7 +231,6 @@
     <Content Include="Content\Css\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\Images\star-off.png" />
     <Content Include="Content\Images\star-on.png" />
-    <Content Include="Content\Images\turbo.jpg" />
     <Content Include="Content\Scripts\JQuery\jquery-1.10.2.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -276,6 +282,18 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Play.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Images\Thumbnails\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\EditMovie.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\p.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -292,7 +310,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>53344</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49903/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

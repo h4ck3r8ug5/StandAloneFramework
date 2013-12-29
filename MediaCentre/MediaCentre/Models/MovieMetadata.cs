@@ -11,5 +11,7 @@
         public string VideoCodec { get; set; }
         
         public string AudioCodec { get; set; }
+
+        public string Format { get; set; }
     }
 }

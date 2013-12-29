@@ -1,0 +1,35 @@
+﻿@model MvcApplication1.Models.Movie
+
+<div data-role="collapsible-set">
+    <div data-role="collapsible-set">
+        <div data-role="collapsible" data-collapsed="true" id="movieInfoContainer">
+            <h2>@Model.Name</h2>
+            <div id="movieInfo">
+                @Html.Partial("MovieDetails", Model)
+            </div>
+            
+            <div data-role="collapsible" data-collapsed="true" id="movieMetadataContainer">
+                <h2>Technical Specifications</h2>
+                <div  id="movieMetadata">
+                    @Html.Partial("MovieMetadataDetails", Model.Metadata)
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        var isMovieThumbnailResized = false;
+        
+        $('#movieInfoContainer').bind('expand', function () {
+
+            if (!isMovieThumbnailResized) {
+                $("#@Model.UniqueIdentifier").height($("#movieInfoContainer").height() * 3);
+                isMovieThumbnailResized = true;
+            }                        
+        });        
+
+    </script>
+}

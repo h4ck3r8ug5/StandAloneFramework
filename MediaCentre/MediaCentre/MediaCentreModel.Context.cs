@@ -33,5 +33,6 @@ namespace MediaCentre
         public DbSet<Statistic> Statistic { get; set; }
         public DbSet<Trace> Trace { get; set; }
         public DbSet<Year> Year { get; set; }
+        public DbSet<MovieThumbnails> MovieThumbnails { get; set; }
     }
 }

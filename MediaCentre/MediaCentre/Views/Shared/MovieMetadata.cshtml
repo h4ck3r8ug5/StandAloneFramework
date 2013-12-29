@@ -1,42 +1,71 @@
 ﻿@model MediaCentre.Models.Movie
 
- <div class="flipbox-container">
-                <div class="flipbox">
-                    <table id="testTable" class="Hidden">
-                        <tr>
-                            <td>Genre:</td>
-                            <td>@Model.Genre</td>
-                        </tr>
-                        <tr>
-                            <td>Year:</td>
-                            <td>@Model.Year</td>
-                        </tr>
-                        <tr>
-                            <td>Director:</td>
-                            <td>@Model.Directors</td>
-                        </tr>
-                        <tr>
-                            <td>Overview:</td>
-                            <td>@Model.Description</td>
-                        </tr>
-                        <tr>
-                            <td>Imdb Rating:</td>
-                            <td>
-                                
-                                @for (var i = 0; i < 10; i++)
-                                {                                   
-                                    if (i < Model.Rating)
-                                    {
-                                        <img src="../../Content/Images/star-on.png" alt="star"/>
-                                    }
-                                    else
-                                    {
-                                        <img src="../../Content/Images/star-off.png" alt="no star"/>
-                                    }
-                                }
-                                                              
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+<div class="flipbox-container">
+    <div class="flipbox">
+        <table id="testTable" class="Hidden">
+            <tr>
+                <td>Genre:</td>
+                <td> @Html.DisplayFor(model => model.Genre)</td>
+            </tr>
+            <tr>
+                <td>Year:</td>
+                <td> @Html.DisplayFor(model => model.Year)</td>
+            </tr>
+            <tr>
+                <td>Director:</td>
+                <td> @Html.DisplayFor(model => model.Directors)</td>
+            </tr>
+            <tr>
+                <td>Overview:</td>
+                <td> @Html.DisplayFor(model => model.Description)</td>
+            </tr>
+            <tr>
+                <td>Imdb Rating:</td>
+                <td>
+
+                    @for (var i = 0; i < 10; i++)
+                    {
+                        if (i < Model.Rating)
+                        {
+                        <img src="../../Content/Images/star-on.png" alt="star" />
+                        }
+                        else
+                        {
+                        <img src="../../Content/Images/star-off.png" alt="no star" />
+                        }
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <b>Technical Specifications</b>
+                </td>
+            </tr>
+            <tr>
+                <td>Duration:</td>
+                <td> @Html.DisplayFor(model => model.Metadata.Duration)</td>
+            </tr>
+            <tr>
+                <td>Screen Resolution:</td>
+                <td>@Html.DisplayFor(model => model.Metadata.ScreenResolution)</td>
+            </tr>
+            <tr>
+                <td>Format:</td>
+                <td>@Html.DisplayFor(model => model.Metadata.Format)</td>
+            </tr>
+            <tr>
+                <td>Audio Codec:</td>
+                <td>@Html.DisplayFor(model => model.Metadata.AudioCodec)</td>
+            </tr>
+            <tr>
+                <td>Video Codec:</td>
+                <td>@Html.DisplayFor(model => model.Metadata.VideoCodec)</td>
+            </tr>
+            <tr>
+                <td><a href="@Model.MovieUrl" id="PlayMovie">Watch Now</a></td>
+                <td style="padding-left: 10px;"><a href="/Home/EditMovie/@Model.Id">Edit Movie Data</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
