@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using StandAloneFramework.Extensions;
 using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.FrameworkClasses;
@@ -14,7 +15,9 @@ namespace StandAloneFramework
             {
                 if (methodWrapper.ExecutingThread.IsObjectNotNull())
                 {
-                    methodWrapper.ExecutingThread.Start();
+                    methodWrapper.ExecutingThread.IsBackground = true;                    
+                    //methodWrapper.ExecutingThread.Start();
+                    //methodWrapper.ExecutingThread.Join();
                 }
                 else
                 {

@@ -20,7 +20,7 @@ namespace StandAloneFramework.Factories.MethodFactory
     }
 
     public class MethodWrapper
-    {       
+    {
         public MethodReturnType MethodReturnType { get; set; }
 
         public MethodType MethodType { get; set; }
@@ -38,34 +38,34 @@ namespace StandAloneFramework.Factories.MethodFactory
 
     public class MethodFactory : IMethodFactory
     {
-        private readonly IThreadFactory threadFactory;
-        private MethodWrapper methodWrapper;
+        public IThreadFactory ThreadFactory { get; set; }
+        public MethodWrapper MethodWrapper { get; set; }
         private readonly IDynamicInvoker dynamicInvoker;
 
         public MethodFactory()
         {
-            threadFactory = new ThreadFactory.ThreadFactory();
-            methodWrapper = new MethodWrapper();
+            ThreadFactory = new ThreadFactory.ThreadFactory();
+            MethodWrapper = new MethodWrapper();
             dynamicInvoker = new DyamicInvoker();
         }
      
         public object ExecuteMethod()
         {
-            threadFactory.CreateThread(methodWrapper);
+            ThreadFactory.CreateThread(MethodWrapper);
 
-           return dynamicInvoker.InvokeMethod(methodWrapper);
+           return dynamicInvoker.InvokeMethod(MethodWrapper);
         }
 
         public void StartFactory(MethodReturnType methodReturnType, MethodType methodType, ThreadingModel threadingModel, object methodToInvoke, DataWrapper args)
         {            
-            methodWrapper = new MethodWrapper
+            MethodWrapper = new MethodWrapper
             {
                 Arguments = args,
                 MethodReturnType = methodReturnType,
                 MethodType = methodType,               
                 ThreadingModel = threadingModel,
                 ActionMethod = methodToInvoke as Action<DataWrapper>,
-                FuncMethod = methodToInvoke as Func<DataWrapper,InvocationResult>
+                FuncMethod = methodToInvoke as Func<DataWrapper,InvocationResult>,
             };         
         }
     }

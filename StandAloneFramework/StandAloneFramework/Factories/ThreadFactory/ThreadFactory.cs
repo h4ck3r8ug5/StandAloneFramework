@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using StandAloneFramework.Extensions;
 using StandAloneFramework.Factories.Interfaces;
@@ -14,6 +15,13 @@ namespace StandAloneFramework.Factories.ThreadFactory
 
     public class ThreadFactory : IThreadFactory
     {
+        public IList<Thread> RunningThreads { get; set; }
+        
+        public ThreadFactory()
+        {
+            RunningThreads = new List<Thread>();
+        }
+    
         public void CreateThread(MethodWrapper methodWrapper)
         {
             switch (methodWrapper.ThreadingModel)
@@ -30,13 +38,24 @@ namespace StandAloneFramework.Factories.ThreadFactory
                         threadStart = dataWrapper => methodWrapper.FuncMethod(methodWrapper.Arguments);
                     }
 
-                    methodWrapper.ExecutingThread = new Thread(threadStart);
+                    //methodWrapper.ExecutingThread = new Thread(threadStart);
+                    //RunningThreads.Add(methodWrapper.ExecutingThread);
+
                     break;
 
                 case ThreadingModel.None:
                     methodWrapper.ExecutingThread = null;
                     break;
             }            
+        }
+
+        public Thread FindThread(int threadId)
+        {
+            var thread = RunningThreads.FirstOrDefault(x => x.ManagedThreadId == threadId);
+
+            CodeContractValidator.ArgumentCannotBeNull(thread,"Managed Thread");
+
+            return thread;
         }
     }
 }

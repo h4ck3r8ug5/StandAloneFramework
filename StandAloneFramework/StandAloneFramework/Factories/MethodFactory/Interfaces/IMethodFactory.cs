@@ -1,4 +1,5 @@
-﻿using StandAloneFramework.Factories.MethodFactory;
+﻿using System.Threading;
+using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.Factories.ThreadFactory;
 
 namespace StandAloneFramework.Factories.Interfaces
@@ -7,5 +8,7 @@ namespace StandAloneFramework.Factories.Interfaces
     {
         object ExecuteMethod();
         void StartFactory(MethodReturnType methodReturnType, MethodType methodType, ThreadingModel threadingModel, object methodToInvoke, DataWrapper args);
+        IThreadFactory ThreadFactory { get; set; }
+        MethodWrapper MethodWrapper { get; set; }
     }
 }

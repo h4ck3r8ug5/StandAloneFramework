@@ -45,9 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\StandAloneFramework\StandAloneFramework.csproj">
       <Project>{e5dafdeb-52c4-4284-94f7-681a68ca35ca}</Project>
       <Name>StandAloneFramework</Name>
