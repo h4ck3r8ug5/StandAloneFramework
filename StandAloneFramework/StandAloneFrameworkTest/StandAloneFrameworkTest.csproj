@@ -53,6 +53,7 @@
     <Compile Include="IntegrationTests\ErrorManager\ErrorManagerTestFixture.cs" />
     <Compile Include="IntegrationTests\IntegrationTestBase.cs" />
     <Compile Include="IntegrationTests\MemoryManager\MemoryManagerTestFixture.cs" />
+    <Compile Include="IntegrationTests\StandaloneFrameworkTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatefulTests\CacheManager\CacheMangerTestFixture.cs" />
     <Compile Include="StatefulTests\DynamicInvoker\DynamicInvokerTestFixture.cs" />

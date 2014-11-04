@@ -18,7 +18,7 @@ namespace CustomRounding
             var input = 2.144555;
             //var input = 3.1428571428571428571428571428571;
             var stopwatch = new Stopwatch();
-            var result = RoundWithTieBreaker(input, 4);
+            var result = RoundWithTieBreaker(input, 0);
 
             Console.WriteLine(result);
 
