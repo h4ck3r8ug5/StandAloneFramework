@@ -17,7 +17,7 @@ namespace StandAloneFramework
                 MessageType = InvocationResult.InvocationResultType.Error
             };
 
-            ShowMessage(message);             
+            ShowMessage(message);
         }
 
         Exception FindLastException(Exception exception)
@@ -26,7 +26,7 @@ namespace StandAloneFramework
             {
                 return FindLastException(exception.InnerException);
             }
-            return exception.InnerException;
+            return exception;
         }
     }
 }

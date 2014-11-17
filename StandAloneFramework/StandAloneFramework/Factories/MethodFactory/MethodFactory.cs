@@ -33,7 +33,7 @@ namespace StandAloneFramework.Factories.MethodFactory
 
         public Action<DataWrapper> ActionMethod { get; set; }
         
-        public Func<DataWrapper,InvocationResult> FuncMethod { get; set; }
+        public Func<DataWrapper, InvocationResult> FuncMethod { get; set; }
     }
 
     public class MethodFactory : IMethodFactory
@@ -57,7 +57,9 @@ namespace StandAloneFramework.Factories.MethodFactory
         }
 
         public void StartFactory(MethodReturnType methodReturnType, MethodType methodType, ThreadingModel threadingModel, object methodToInvoke, DataWrapper args)
-        {            
+        {
+            CodeContractValidator.MethodSignatureTypeMatch(methodReturnType, methodType);
+
             MethodWrapper = new MethodWrapper
             {
                 Arguments = args,
@@ -65,7 +67,7 @@ namespace StandAloneFramework.Factories.MethodFactory
                 MethodType = methodType,               
                 ThreadingModel = threadingModel,
                 ActionMethod = methodToInvoke as Action<DataWrapper>,
-                FuncMethod = methodToInvoke as Func<DataWrapper,InvocationResult>,
+                FuncMethod = methodToInvoke as Func<DataWrapper, InvocationResult>,
             };         
         }
     }
