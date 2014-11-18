@@ -31,7 +31,13 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
         internal static void WriteTextFile(DataWrapper args)
         {
-            File.WriteAllText(args.Argument,"Testing the file");
+            if (!File.Exists(string.Format("{0}",args.Argument)))
+            {
+                File.Create(args.Argument);
+            }
+            File.WriteAllText(args.Argument, "Testing the file");
+
+            File.Delete(args.Argument);
         }
 
         internal static void WriteDataToDatabase(DataWrapper args)

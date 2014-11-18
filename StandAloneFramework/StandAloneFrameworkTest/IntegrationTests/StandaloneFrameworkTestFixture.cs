@@ -5,6 +5,7 @@ using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.Factories.ThreadFactory;
 using StandAloneFramework.FrameworkClasses;
 using StandAloneFramework.MethodFacade;
+using StandAloneFrameworkTest.ServiceReference1;
 
 namespace StandAloneFrameworkTest.IntegrationTests
 {
@@ -33,7 +34,7 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
             var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
-            Assert.IsNotNull(invocationResult);
+            Assert.IsNull(invocationResult);
         }
 
         [TestMethod]
@@ -69,15 +70,11 @@ namespace StandAloneFrameworkTest.IntegrationTests
                 Argument = "Test.txt"
             };
 
-            const int expectedResult = 200;
-
             MethodFacade.MethodFactory.StartFactory(MethodReturnType.Void, MethodType.Action, ThreadingModel.Single, methodToInvoke, DataWrapper);
 
             var actualResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
-            Assert.IsNotNull(actualResult);
-
-            Assert.AreEqual(expectedResult, int.Parse(actualResult.Data.ToString()));
+            Assert.IsNull(actualResult);             
         }
 
         [TestMethod]
@@ -94,7 +91,7 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
             var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
-            Assert.IsNotNull(invocationResult);
+            Assert.IsNull(invocationResult);
         }
 
         [TestMethod]
@@ -117,7 +114,21 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
             var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
+            var expected = new DatabaseRecord
+            {
+                Name = "Charles",
+                Password = "Password"
+            };
+
             Assert.IsNotNull(invocationResult);
+            Assert.AreEqual(expected.Name,(invocationResult.Data as DatabaseRecord).Name);
+            Assert.AreEqual(expected.Password, (invocationResult.Data as DatabaseRecord).Password);
+        }
+
+        [TestCleanup,Ignore]
+        public void DisposeResources()
+        {
+            
         }
 
         #endregion
