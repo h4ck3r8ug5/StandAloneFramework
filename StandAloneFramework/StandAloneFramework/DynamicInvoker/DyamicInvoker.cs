@@ -7,7 +7,7 @@ using StandAloneFramework.Intefaces;
 namespace StandAloneFramework
 {
     public class DyamicInvoker : ErrorManager, IDynamicInvoker
-    {           
+    {
         public InvocationResult InvokeMethod(MethodWrapper methodWrapper)
         {
             try
@@ -22,17 +22,17 @@ namespace StandAloneFramework
                 {
                     if (methodWrapper.ActionMethod.IsObjectNotNull())
                     {
-                        return (InvocationResult) methodWrapper.ActionMethod.DynamicInvoke(methodWrapper.Arguments);
+                        InvocationResult = methodWrapper.ActionMethod.DynamicInvoke(methodWrapper.Arguments) as InvocationResult;
                     }
-                    return (InvocationResult) methodWrapper.FuncMethod.DynamicInvoke(methodWrapper.Arguments);
+                    InvocationResult = methodWrapper.FuncMethod.DynamicInvoke(methodWrapper.Arguments) as InvocationResult;
                 }
             }
             catch (Exception ex)
             {
-                HandleErrorMessages(ex);
-                return null;
+                HandleErrorMessages(ex, ref invocationResult);
+                return InvocationResult;
             }
-            return null;
+            return InvocationResult;
         }
     }
 }

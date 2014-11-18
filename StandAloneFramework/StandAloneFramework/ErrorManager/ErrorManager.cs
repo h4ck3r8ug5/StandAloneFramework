@@ -7,7 +7,15 @@ namespace StandAloneFramework
 {
     public class ErrorManager : MessageHandler, IErrorManager
     {
-        public void HandleErrorMessages(Exception exception)
+        protected InvocationResult invocationResult;
+
+        protected InvocationResult InvocationResult
+        {
+            get { return invocationResult; }
+            set { invocationResult = value; }
+        }
+
+        public void HandleErrorMessages(Exception exception, ref InvocationResult invocationResult)
         {
             var finalException = FindLastException(exception);
 
@@ -18,6 +26,8 @@ namespace StandAloneFramework
             };
 
             ShowMessage(message);
+
+            invocationResult = message;
         }
 
         Exception FindLastException(Exception exception)
@@ -27,6 +37,6 @@ namespace StandAloneFramework
                 return FindLastException(exception.InnerException);
             }
             return exception;
-        }
+        }        
     }
 }

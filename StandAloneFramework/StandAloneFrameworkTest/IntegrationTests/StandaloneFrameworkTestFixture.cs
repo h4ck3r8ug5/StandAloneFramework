@@ -125,6 +125,30 @@ namespace StandAloneFrameworkTest.IntegrationTests
             Assert.AreEqual(expected.Password, (invocationResult.Data as DatabaseRecord).Password);
         }
 
+        [TestMethod]
+        public void Test_CanInvokeActionMethodWithErrors()
+        {
+            var methodToInvoke = new Action(() => TestFixtureMethods.WriteTextFile(null));
+
+            MethodFacade.MethodFactory.StartFactory(MethodReturnType.Void, MethodType.Action, ThreadingModel.Single, methodToInvoke, DataWrapper);
+
+            var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
+
+            Assert.IsTrue(invocationResult.MessageType == InvocationResult.InvocationResultType.Error);
+        }
+
+        [TestMethod]
+        public void Test_CanInvokeActionServiceMethodWithErrors()
+        {
+            var methodToInvoke = new Action<DataWrapper>(TestFixtureMethods.WriteDataToDatabase);
+
+            MethodFacade.MethodFactory.StartFactory(MethodReturnType.Void, MethodType.Action, ThreadingModel.Single, methodToInvoke, DataWrapper);
+
+            var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
+
+            Assert.IsTrue(invocationResult.MessageType == InvocationResult.InvocationResultType.Error);
+        }
+
         [TestCleanup,Ignore]
         public void DisposeResources()
         {
