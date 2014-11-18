@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Text;
 using StandAloneFramework;
 using StandAloneFramework.FrameworkClasses;
 using StandAloneFramework.MethodFacade;
@@ -69,6 +70,16 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
         internal static InvocationResult ReadTextFile(DataWrapper args)
         {
+            if (!File.Exists(args.Argument))
+            {
+                using(var fs = new FileStream(args.Argument,FileMode.CreateNew,FileAccess.Write,FileShare.Read))
+                {
+                    var bytes = Encoding.ASCII.GetBytes(args.xValue.ToString());
+                    fs.Write(bytes,0, bytes.Length);
+                    fs.Flush();
+                }
+            }
+
             return new InvocationResult
             {
                 Data = File.ReadAllText(args.Argument)

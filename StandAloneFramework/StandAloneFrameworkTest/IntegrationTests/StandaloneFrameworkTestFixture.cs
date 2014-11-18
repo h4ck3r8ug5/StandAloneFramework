@@ -42,7 +42,7 @@ namespace StandAloneFrameworkTest.IntegrationTests
         {
             DataWrapper = new DataWrapper
             {
-                xValue = 100,
+                xValue = 200,
                 Argument = "Test.txt"
             };
 
