@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StandAloneFramework;
+using StandAloneFramework.Extensions;
 using StandAloneFramework.Factories.MethodFactory;
 using StandAloneFramework.Factories.ThreadFactory;
 using StandAloneFramework.FrameworkClasses;
@@ -18,24 +19,7 @@ namespace StandAloneFrameworkTest.IntegrationTests
         public void InitialiseTest()
         {
             MethodFacade = new MethodFacade();
-        }
-
-        [TestMethod]
-        public void Test_CanInvokeActionMethod()
-        {
-            DataWrapper = new DataWrapper
-            {
-                xValue = 50
-            };
-
-            var methodToInvoke = new Action<DataWrapper>(wrapper => TestFixtureMethods.AddNums(wrapper));
-
-            MethodFacade.MethodFactory.StartFactory(MethodReturnType.Void, MethodType.Action, ThreadingModel.Single, methodToInvoke, DataWrapper);
-
-            var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
-
-            Assert.IsNull(invocationResult);
-        }
+        }       
 
         [TestMethod]
         public void Test_CanInvokeFuncMethod()
@@ -147,7 +131,20 @@ namespace StandAloneFrameworkTest.IntegrationTests
             var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
             Assert.IsTrue(invocationResult.MessageType == InvocationResult.InvocationResultType.Error);
-        }        
+        }
+
+        [TestMethod]
+        public void Test_CanDisposeOfObjectCleanly()
+        {
+            var invocationResult = new InvocationResult();
+
+            using(invocationResult)
+            {
+                var methodToInvoke = new Action(() => TestFixtureMethods.AddNums(null));
+            }
+
+            Assert.IsTrue(invocationResult.IsObjectDisposed);
+        }
 
         #endregion
     }
