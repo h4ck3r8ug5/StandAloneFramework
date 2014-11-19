@@ -147,13 +147,7 @@ namespace StandAloneFrameworkTest.IntegrationTests
             var invocationResult = MethodFacade.MethodFactory.ExecuteMethod() as InvocationResult;
 
             Assert.IsTrue(invocationResult.MessageType == InvocationResult.InvocationResultType.Error);
-        }
-
-        [TestCleanup,Ignore]
-        public void DisposeResources()
-        {
-            
-        }
+        }        
 
         #endregion
     }
