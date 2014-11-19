@@ -32,13 +32,17 @@ namespace StandAloneFrameworkTest.IntegrationTests
 
         internal static void WriteTextFile(DataWrapper args)
         {
-            if (!File.Exists(string.Format("{0}",args.Argument)))
+            if (!File.Exists(args.Argument))
             {
-                File.Create(args.Argument);
-            }
-            File.WriteAllText(args.Argument, "Testing the file");
+                using (var fs = new FileStream(args.Argument, FileMode.CreateNew, FileAccess.Write, FileShare.Read))
+                {
+                    var bytes = Encoding.ASCII.GetBytes(args.xValue.ToString());
+                    fs.Write(bytes, 0, bytes.Length);
+                    fs.Flush();
+                }
 
-            File.Delete(args.Argument);
+                File.Delete(args.Argument);
+            }
         }
 
         internal static void WriteDataToDatabase(DataWrapper args)
@@ -72,12 +76,13 @@ namespace StandAloneFrameworkTest.IntegrationTests
         {
             if (!File.Exists(args.Argument))
             {
+                File.Delete(args.Argument);
                 using(var fs = new FileStream(args.Argument,FileMode.CreateNew,FileAccess.Write,FileShare.Read))
                 {
                     var bytes = Encoding.ASCII.GetBytes(args.xValue.ToString());
                     fs.Write(bytes,0, bytes.Length);
                     fs.Flush();
-                }
+                }              
             }
 
             return new InvocationResult

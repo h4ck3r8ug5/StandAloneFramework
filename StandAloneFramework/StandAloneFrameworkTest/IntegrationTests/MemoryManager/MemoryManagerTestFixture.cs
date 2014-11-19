@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StandAloneFramework;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StandAloneFramework.FrameworkClasses;
 
 namespace StandAloneFrameworkTest.IntegrationTests.MemoryManager
@@ -7,14 +7,26 @@ namespace StandAloneFrameworkTest.IntegrationTests.MemoryManager
     [TestClass]
     public class MemoryManagerTestFixture
     {
-        [TestMethod,Ignore]
-        public void DisposeObjectTest()
+        [TestMethod]
+        public void Test_CanDisposeOfObjectCleanly()
         {
-            var instance = new InvocationResult();
+            var invocationResult = new InvocationResult();
 
-            var memoryManager = new MemoryManager<InvocationResult>();
+            using (invocationResult)
+            {
+                var methodToInvoke = new Action(() => TestFixtureMethods.AddNums(null));
+            }
 
-            memoryManager.DisposeObject(instance);
+            Assert.IsTrue(invocationResult.IsObjectDisposed);
+
+            invocationResult = new InvocationResult();
+            invocationResult.Dispose();
+            Assert.IsTrue(invocationResult.IsObjectDisposed);
+
+            invocationResult = new InvocationResult();
+            invocationResult.DisposeObject(invocationResult);
+            Assert.IsTrue(invocationResult.IsObjectDisposed);
+
         }
     }
 }

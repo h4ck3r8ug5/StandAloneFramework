@@ -47,7 +47,10 @@ namespace StandAloneFramework
                     {
                         InvocationResult = methodWrapper.ActionMethod.DynamicInvoke(methodWrapper.Arguments) as InvocationResult;
                     }
-                    InvocationResult = methodWrapper.FuncMethod.DynamicInvoke(methodWrapper.Arguments) as InvocationResult;
+                    else
+                    {
+                        InvocationResult = methodWrapper.FuncMethod.DynamicInvoke(methodWrapper.Arguments) as InvocationResult;   
+                    }                    
                 }
             }
             catch (Exception ex)
