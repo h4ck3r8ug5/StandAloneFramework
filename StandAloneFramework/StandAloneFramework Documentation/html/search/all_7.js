@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['icachemanager_2ecs',['ICacheManager.cs',['../_i_cache_manager_8cs.html',1,'']]],
+  ['icachemanager_3c_20t_20_3e',['ICacheManager&lt; T &gt;',['../interface_stand_alone_framework_1_1_interfaces_1_1_i_cache_manager_3_01_t_01_4.html',1,'StandAloneFramework::Interfaces']]],
+  ['idynamicinvoker',['IDynamicInvoker',['../interface_stand_alone_framework_1_1_intefaces_1_1_i_dynamic_invoker.html',1,'StandAloneFramework::Intefaces']]],
+  ['idynamicinvoker_2ecs',['IDynamicInvoker.cs',['../_i_dynamic_invoker_8cs.html',1,'']]],
+  ['ierrormanager',['IErrorManager',['../interface_stand_alone_framework_1_1_interfaces_1_1_i_error_manager.html',1,'StandAloneFramework::Interfaces']]],
+  ['ierrormanager_2ecs',['IErrorManager.cs',['../_i_error_manager_8cs.html',1,'']]],
+  ['imemorymanager',['IMemoryManager',['../interface_stand_alone_framework_1_1_interfaces_1_1_i_memory_manager.html',1,'StandAloneFramework::Interfaces']]],
+  ['imemorymanager_2ecs',['IMemoryManager.cs',['../_i_memory_manager_8cs.html',1,'']]],
+  ['imessagehandler',['IMessageHandler',['../interface_stand_alone_framework_1_1_interfaces_1_1_i_message_handler.html',1,'StandAloneFramework::Interfaces']]],
+  ['imessagehandler_2ecs',['IMessageHandler.cs',['../_i_message_handler_8cs.html',1,'']]],
+  ['imethodfacade',['IMethodFacade',['../interface_stand_alone_framework_1_1_method_facade_1_1_interfaces_1_1_i_method_facade.html',1,'StandAloneFramework::MethodFacade::Interfaces']]],
+  ['imethodfacade_2ecs',['IMethodFacade.cs',['../_i_method_facade_8cs.html',1,'']]],
+  ['imethodfactory',['IMethodFactory',['../interface_stand_alone_framework_1_1_factories_1_1_interfaces_1_1_i_method_factory.html',1,'StandAloneFramework::Factories::Interfaces']]],
+  ['imethodfactory_2ecs',['IMethodFactory.cs',['../_i_method_factory_8cs.html',1,'']]],
+  ['instance',['Instance',['../class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4.html#a89d30acfacd8f0272d29c60b87f0be25',1,'StandAloneFramework::CacheManager&lt; T &gt;']]],
+  ['invocationresult',['InvocationResult',['../class_stand_alone_framework_1_1_framework_classes_1_1_invocation_result.html',1,'StandAloneFramework::FrameworkClasses']]],
+  ['invocationresult',['invocationResult',['../class_stand_alone_framework_1_1_error_manager.html#a25023f8540577f3d5d901f2569c3f2ec',1,'StandAloneFramework.ErrorManager.invocationResult()'],['../class_stand_alone_framework_1_1_error_manager.html#a98353b3c901cdfb95f1c8dc3499ebb13',1,'StandAloneFramework.ErrorManager.InvocationResult()']]],
+  ['invocationresult_2ecs',['InvocationResult.cs',['../_invocation_result_8cs.html',1,'']]],
+  ['invocationresulttype',['InvocationResultType',['../class_stand_alone_framework_1_1_framework_classes_1_1_invocation_result.html#a536bbf61143c8a5b8364bf7c77896ba4',1,'StandAloneFramework::FrameworkClasses::InvocationResult']]],
+  ['invokemethod',['InvokeMethod',['../class_stand_alone_framework_1_1_dyamic_invoker.html#afa62776cb39ce4e31221dc1373440d06',1,'StandAloneFramework.DyamicInvoker.InvokeMethod()'],['../interface_stand_alone_framework_1_1_intefaces_1_1_i_dynamic_invoker.html#ad3978a717b76fbd44c1f8ce6c08564cc',1,'StandAloneFramework.Intefaces.IDynamicInvoker.InvokeMethod()']]],
+  ['isobjectdisposed',['IsObjectDisposed',['../class_stand_alone_framework_1_1_memory_manager_3_01_t_01_4.html#ad2375b894216a59e50c1942ee82f41c6',1,'StandAloneFramework::MemoryManager&lt; T &gt;']]],
+  ['ithreadfactory',['IThreadFactory',['../interface_stand_alone_framework_1_1_factories_1_1_interfaces_1_1_i_thread_factory.html',1,'StandAloneFramework::Factories::Interfaces']]],
+  ['ithreadfactory_2ecs',['IThreadFactory.cs',['../_i_thread_factory_8cs.html',1,'']]]
+];

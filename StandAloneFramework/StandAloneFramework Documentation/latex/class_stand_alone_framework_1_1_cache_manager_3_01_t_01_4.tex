@@ -1,0 +1,153 @@
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4}{\section{Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$ Class Template Reference}
+\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4}\index{Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$}}
+}
+
+
+Acts as a central store for all objects who need to be cached  
+
+
+Inheritance diagram for Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a12dfe46d4b252229dc2a039fc5284672}{Cache\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Cache\+Manager\{\+T\} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_aa50da1a72eee451e267bb4e2927ebb96}{Add\+Object\+To\+Cache} (T instance)
+\begin{DoxyCompactList}\small\item\em Adds the object to cache store. \end{DoxyCompactList}\item 
+T \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a37a6e63d5523b967266e4abbc778de95}{Get\+Object\+From\+Cache} (int hash\+Code)
+\begin{DoxyCompactList}\small\item\em Gets the object from cache store. \end{DoxyCompactList}\item 
+void \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a794235bffdaeb6e34a6b715bbeeacdef}{Flush\+Cache} ()
+\begin{DoxyCompactList}\small\item\em Flushes the cache store. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529}{Cache\+Flush\+Reason} \{ \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529a7a1920d61156abc05a60135aefe8bc67}{Cache\+Flush\+Reason.\+Default}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the reasons for flushing the cache \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a89d30acfacd8f0272d29c60b87f0be25}{Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the instance of the object to either be stored in the cache store or that is retrieved from the cache store. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Acts as a central store for all objects who need to be cached 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Cache\+Flush\+Reason@{Cache\+Flush\+Reason}}
+\index{Cache\+Flush\+Reason@{Cache\+Flush\+Reason}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Cache\+Flush\+Reason}]{\setlength{\rightskip}{0pt plus 5cm}enum Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.{\bf Cache\+Flush\+Reason}\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529}
+
+
+Represents the reasons for flushing the cache 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Default@{Default}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Default@{Default}}\item[{\em 
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529a7a1920d61156abc05a60135aefe8bc67}{Default}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_ad524db310decad748ac932dfd557e529a7a1920d61156abc05a60135aefe8bc67}
+}]Represents the default reason for the cache being flushed. Will expand on this soon \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a12dfe46d4b252229dc2a039fc5284672}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Cache\+Manager@{Cache\+Manager}}
+\index{Cache\+Manager@{Cache\+Manager}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Cache\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.Cache\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a12dfe46d4b252229dc2a039fc5284672}
+
+
+Initializes a new instance of the Cache\+Manager\{\+T\} class. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_aa50da1a72eee451e267bb4e2927ebb96}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Add\+Object\+To\+Cache@{Add\+Object\+To\+Cache}}
+\index{Add\+Object\+To\+Cache@{Add\+Object\+To\+Cache}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Add\+Object\+To\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}void Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.Add\+Object\+To\+Cache (
+\begin{DoxyParamCaption}
+\item[{T}]{instance}
+\end{DoxyParamCaption}
+)}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_aa50da1a72eee451e267bb4e2927ebb96}
+
+
+Adds the object to cache store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instance} & The instance.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interface_stand_alone_framework_1_1_interfaces_1_1_i_cache_manager_3_01_t_01_4_ad0c1608fcc47c31a0afa49f41d516cb4}{Stand\+Alone\+Framework.\+Interfaces.\+I\+Cache\+Manager$<$ T $>$}.
+
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a794235bffdaeb6e34a6b715bbeeacdef}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Flush\+Cache@{Flush\+Cache}}
+\index{Flush\+Cache@{Flush\+Cache}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Flush\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}void Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.Flush\+Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a794235bffdaeb6e34a6b715bbeeacdef}
+
+
+Flushes the cache store. 
+
+
+
+Implements \hyperlink{interface_stand_alone_framework_1_1_interfaces_1_1_i_cache_manager_3_01_t_01_4_aaedd6cf3b69897bac84bf4ddbad1fdb4}{Stand\+Alone\+Framework.\+Interfaces.\+I\+Cache\+Manager$<$ T $>$}.
+
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a37a6e63d5523b967266e4abbc778de95}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Get\+Object\+From\+Cache@{Get\+Object\+From\+Cache}}
+\index{Get\+Object\+From\+Cache@{Get\+Object\+From\+Cache}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Get\+Object\+From\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}T Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.Get\+Object\+From\+Cache (
+\begin{DoxyParamCaption}
+\item[{int}]{hash\+Code}
+\end{DoxyParamCaption}
+)}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a37a6e63d5523b967266e4abbc778de95}
+
+
+Gets the object from cache store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hash\+Code} & The hash code.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T.
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_stand_alone_framework_1_1_interfaces_1_1_i_cache_manager_3_01_t_01_4_ab9c4fc7d4950da75c9bddd22634bd1f3}{Stand\+Alone\+Framework.\+Interfaces.\+I\+Cache\+Manager$<$ T $>$}.
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a89d30acfacd8f0272d29c60b87f0be25}{\index{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}!Instance@{Instance}}
+\index{Instance@{Instance}!Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$@{Stand\+Alone\+Framework\+::\+Cache\+Manager$<$ T $>$}}
+\subsubsection[{Instance}]{\setlength{\rightskip}{0pt plus 5cm}T Stand\+Alone\+Framework.\+Cache\+Manager$<$ T $>$.Instance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}}\label{class_stand_alone_framework_1_1_cache_manager_3_01_t_01_4_a89d30acfacd8f0272d29c60b87f0be25}
+
+
+Gets or sets the instance of the object to either be stored in the cache store or that is retrieved from the cache store. 
+
+The instance.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Charles Trent Spare/\+Documents/\+Source Control/\+Repositories/\+Development\+Projects/\+Stand\+Alone\+Framework/\+Stand\+Alone\+Framework/\+Cache\+Manager/\hyperlink{_cache_manager_8cs}{Cache\+Manager.\+cs}\end{DoxyCompactItemize}
