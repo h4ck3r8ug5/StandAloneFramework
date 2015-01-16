@@ -1,8 +1,0 @@
-﻿.Transparent {
-    opacity: 0.0;
-    filter: alpha(opacity=0);
-}
-
-.Hidden {
-    display: none;
-}

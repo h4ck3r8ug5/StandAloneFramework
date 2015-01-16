@@ -1,4 +1,0 @@
-var class_stand_alone_framework_test_1_1_stateful_tests_1_1_cache_manager_1_1_cache_manger_test_fixture =
-[
-    [ "CanGetObjectFromCache", "class_stand_alone_framework_test_1_1_stateful_tests_1_1_cache_manager_1_1_cache_manger_test_fixture.html#a25291a408d96941a7bbe1d58abb3b562", null ]
-];
